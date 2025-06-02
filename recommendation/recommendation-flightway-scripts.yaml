@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: recommendation-flyway-scripts
+data:
+  V1__create_orders_table.sql: |
+    CREATE TABLE Books (
+      Id INT IDENTITY(1,1) PRIMARY KEY,
+      Title NVARCHAR(255) NOT NULL,
+      Genre NVARCHAR(50) NOT NULL,
+      Stock INT NOT NULL
+    );

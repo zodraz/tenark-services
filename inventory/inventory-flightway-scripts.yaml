@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: inventory-flyway-scripts
+data:
+  V1__create_inventory_table.sql: |
+    CREATE TABLE Inventory (
+      BookId INT PRIMARY KEY,
+      Quantity INT NOT NULL
+    );
