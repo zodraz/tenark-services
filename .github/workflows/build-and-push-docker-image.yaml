@@ -65,8 +65,8 @@ jobs:
       - name: Build and Push Docker Recommendation Image
         uses: docker/build-push-action@v6
         with:
-          context: ./recommendation
-          file: ./recommendation/Dockerfile
+          context: ./src/recommendation
+          file: ./src/recommendation/Dockerfile
           push: true
           tags: |
             ${{ secrets.REGISTRY_LOGIN_SERVER }}/tenark-recommendation:${{ needs.semver.outputs.new_version }}
@@ -75,8 +75,8 @@ jobs:
       - name: Build and Push Docker Ordering Image
         uses: docker/build-push-action@v6
         with:
-          context: ./ordering
-          file: ./ordering/Dockerfile
+          context: ./src/ordering
+          file: ./src/ordering/Dockerfile
           push: true
           tags: |
             ${{ secrets.REGISTRY_LOGIN_SERVER }}/tenark-ordering:${{ needs.semver.outputs.new_version }}
@@ -85,8 +85,8 @@ jobs:
       - name: Build and Push Docker Inventory Image
         uses: docker/build-push-action@v6
         with:
-          context: ./inventory
-          file: ./inventory/Dockerfile
+          context: ./src/inventory
+          file: ./src/inventory/Dockerfile
           push: true
           tags: |
             ${{ secrets.REGISTRY_LOGIN_SERVER }}/tenark-inventory:${{ needs.semver.outputs.new_version }}

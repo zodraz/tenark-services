@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - inventory-db-credentials.yaml
+  - inventory-flightway-scripts.yml
+  - inventory-ingress.yml
+  - inventory-service-deployment.yaml
+  - inventory-service.yaml
