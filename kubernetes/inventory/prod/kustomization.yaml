@@ -3,4 +3,5 @@ kind: Kustomization
 bases:
   - ../base
 patchesStrategicMerge:
-  - inventory-db-credentials-patch.yml
+  - inventory-db-credentials-patch.yaml
+  - inventory-service-deployment-patch.yaml

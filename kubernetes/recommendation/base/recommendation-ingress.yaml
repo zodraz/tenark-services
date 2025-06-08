@@ -5,9 +5,9 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: nginx
+  ingressClassName: webapprouting.kubernetes.azure.com
   rules:
-  - host: tenark-tenant-host
+  - host: tenark.com
     http:
       paths:
       - path: /recommendations

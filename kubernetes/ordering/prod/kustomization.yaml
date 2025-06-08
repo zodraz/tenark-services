@@ -4,3 +4,4 @@ bases:
   - ../base
 patchesStrategicMerge:
   - ordering-db-credentials-patch.yml
+  - ordering-service-deployment-patch.yaml

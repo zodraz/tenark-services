@@ -3,4 +3,5 @@ kind: Kustomization
 bases:
   - ../base
 patchesStrategicMerge:
-  - recommendation-db-credentials-patch.yml
+  - recommendation-db-credentials-patch.yaml
+  - recommendation-service-deployment-patch.yaml

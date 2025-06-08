@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recommendation-service
+spec:
+  template:
+    spec:
+      initContainers:
+      - name: init-db
+        env:
+        - name: DATABASE_HOST
+          value: "tenark-tenant-db-host"
+        - name: DATABASE_NAME
+          value: "tenark-tenant-db-name"
+        resources:
+          limits:
+            cpu: "0.2"
+            memory: "256Mi"
+          requests:
+            cpu: "0.1"
+            memory: "128Mi"
+        volumeMounts:
+        - name: flyway-scripts
+          mountPath: /flyway/sql
+      containers:
+      - name: recommendation-service
+        env:
+        - name: DATABASE_HOST
+          value: "tenark-tenant-db-host"
+        - name: DATABASE_NAME
+          value: "tenark-tenant-db-name"
+        resources:
+          limits:
+            cpu: "0.5"
+            memory: "512Mi"
+          requests:
+            cpu: "0.2"
+            memory: "256Mi"
+

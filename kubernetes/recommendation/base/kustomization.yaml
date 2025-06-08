@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
   - recommendation-db-credentials.yaml
-  - recommendation-flightway-scripts.yml
-  - recommendation-ingress.yml
+  - recommendation-flightway-scripts.yaml
+  - recommendation-ingress.yaml
   - recommendation-service-deployment.yaml
   - recommendation-service.yaml
