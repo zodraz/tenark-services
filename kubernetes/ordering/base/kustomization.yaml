@@ -4,6 +4,5 @@ kind: Kustomization
 resources:
   - ordering-db-credentials.yaml
   - ordering-flightway-scripts.yaml
-  - ordering-ingress.yaml
   - ordering-service-deployment.yaml
   - ordering-service.yaml
