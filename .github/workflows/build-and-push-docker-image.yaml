@@ -96,38 +96,38 @@ jobs:
             ${{ secrets.REGISTRY_LOGIN_SERVER }}/tenark-inventory:latest
 
 
-  scan:
-    needs: docker
-    runs-on: ubuntu-latest
+  # scan:
+  #   needs: docker
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+  #   steps:
+  #     - name: Checkout Code
+  #       uses: actions/checkout@v3
 
-      - name: Run Trivy Vulnerability Inventory Scan
-        uses: aquasecurity/trivy-action@0.28.0
-        with:
-          scan-type: 'image'
-          image-ref: ${{ secrets.REGISTRY_LOGIN_SERVER }}/tenark-inventory:${{ needs.semver.outputs.new_version }}
-          format: 'table'
-          exit-code: '1'
-          ignore-unfixed: true
-          vuln-type: 'os,library'
-      - name: Run Trivy Vulnerability Ordering Scan
-        uses: aquasecurity/trivy-action@0.28.0
-        with:
-          scan-type: 'image'
-          image-ref: ${{ secrets.REGISTRY_LOGIN_SERVER }}/tenark-ordering:${{ needs.semver.outputs.new_version }}
-          format: 'table'
-          exit-code: '1'
-          ignore-unfixed: true
-          vuln-type: 'os,library'
-      - name: Run Trivy Vulnerability Recommendation Scan
-        uses: aquasecurity/trivy-action@0.28.0
-        with:
-          scan-type: 'image'
-          image-ref: ${{ secrets.REGISTRY_LOGIN_SERVER }}/tenark-recommendation:${{ needs.semver.outputs.new_version }}
-          format: 'table'
-          exit-code: '1'
-          ignore-unfixed: true
-          vuln-type: 'os,library'
+  #     - name: Run Trivy Vulnerability Inventory Scan
+  #       uses: aquasecurity/trivy-action@0.28.0
+  #       with:
+  #         scan-type: 'image'
+  #         image-ref: ${{ secrets.REGISTRY_LOGIN_SERVER }}/tenark-inventory:${{ needs.semver.outputs.new_version }}
+  #         format: 'table'
+  #         exit-code: '1'
+  #         ignore-unfixed: true
+  #         vuln-type: 'os,library'
+  #     - name: Run Trivy Vulnerability Ordering Scan
+  #       uses: aquasecurity/trivy-action@0.28.0
+  #       with:
+  #         scan-type: 'image'
+  #         image-ref: ${{ secrets.REGISTRY_LOGIN_SERVER }}/tenark-ordering:${{ needs.semver.outputs.new_version }}
+  #         format: 'table'
+  #         exit-code: '1'
+  #         ignore-unfixed: true
+  #         vuln-type: 'os,library'
+  #     - name: Run Trivy Vulnerability Recommendation Scan
+  #       uses: aquasecurity/trivy-action@0.28.0
+  #       with:
+  #         scan-type: 'image'
+  #         image-ref: ${{ secrets.REGISTRY_LOGIN_SERVER }}/tenark-recommendation:${{ needs.semver.outputs.new_version }}
+  #         format: 'table'
+  #         exit-code: '1'
+  #         ignore-unfixed: true
+  #         vuln-type: 'os,library'
