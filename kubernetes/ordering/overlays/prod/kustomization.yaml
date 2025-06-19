@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 bases:
-  - ../base
+  - ../../base
 patchesStrategicMerge:
   - ordering-db-credentials-patch.yml
   - ordering-service-deployment-patch.yaml
