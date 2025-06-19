@@ -24,7 +24,7 @@ spec:
         - name: DATABASE_HOST
           value: "tenark-tenant-db-host"
         - name: DATABASE_NAME
-          value: "tenark-tenant-db-name"
+          value: "ordering-db"
         - name: DATABASE_USER
           valueFrom:
             secretKeyRef:
@@ -51,12 +51,12 @@ spec:
           name: ordering-flyway-scripts
       containers:
       - name: ordering-service
-        image: ordering-service:1.0
+        image: ordering-service:v0.0.4
         env:
         - name: DATABASE_HOST
           value: "tenark-tenant-db-host"
         - name: DATABASE_NAME
-          value: "tenark-tenant-db-name"
+          value: "ordering-db"
         - name: DATABASE_USER
           valueFrom:
             secretKeyRef:
