@@ -3,5 +3,5 @@ kind: Kustomization
 bases:
   - ../../base
 patchesStrategicMerge:
-  - ordering-db-credentials-patch.yml
+  - ordering-db-credentials-patch.yaml
   - ordering-service-deployment-patch.yaml
