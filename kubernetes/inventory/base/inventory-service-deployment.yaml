@@ -51,7 +51,7 @@ spec:
           name: inventory-flyway-scripts
       containers:
       - name: inventory-service
-        image: inventory-service:v0.0.4
+        image: tenark.azurecr.io/inventory-service:v0.0.4
         env:
         - name: DATABASE_HOST
           value: "tenark-tenant-db-host"
