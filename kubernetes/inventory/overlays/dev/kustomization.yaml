@@ -5,4 +5,4 @@ bases:
 nameSuffix: -dev
 patchesStrategicMerge:
   - inventory-db-credentials-patch.yaml
-  - inventory-service-deployment-patch.yaml
+  # - inventory-service-deployment-patch.yaml
