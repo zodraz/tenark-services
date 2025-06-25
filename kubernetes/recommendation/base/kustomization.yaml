@@ -4,5 +4,4 @@ kind: Kustomization
 resources:
   - recommendation-db-credentials.yaml
   - recommendation-flightway-scripts.yaml
-  # - recommendation-service-deployment.yaml
   - recommendation-service.yaml

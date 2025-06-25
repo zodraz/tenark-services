@@ -5,4 +5,3 @@ bases:
 nameSuffix: -prod
 patchesStrategicMerge:
   - recommendation-db-credentials-patch.yaml
-  - recommendation-service-deployment-patch.yaml

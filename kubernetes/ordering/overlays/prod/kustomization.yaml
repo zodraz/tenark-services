@@ -5,4 +5,3 @@ bases:
 nameSuffix: -prod
 patchesStrategicMerge:
   - ordering-db-credentials-patch.yaml
-  - ordering-service-deployment-patch.yaml

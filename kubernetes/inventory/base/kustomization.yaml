@@ -4,5 +4,4 @@ kind: Kustomization
 resources:
   - inventory-db-credentials.yaml
   - inventory-flightway-scripts.yaml
-  # - inventory-service-deployment.yaml
   - inventory-service.yaml
