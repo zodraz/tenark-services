@@ -5,13 +5,12 @@ import os
 app = Flask(__name__)
 
 # Connect to tenant-specific SQL Server database
-conn_str = (
-    f"DRIVER={{ODBC Driver 17 for SQL Server}};"
-    f"SERVER={os.getenv('DATABASE_HOST', '')};"
-    f"DATABASE={os.getenv('DATABASE_NAME', '')};"
-    f"UID={os.getenv('DATABASE_USER', 'sa')};"
-    f"PWD={os.getenv('DATABASE_PASSWORD', 'Password123')}"
-)
+server = os.getenv('DATABASE_HOST')
+database = os.getenv('DATABASE_NAME')
+user = os.getenv('DATABASE_USER')
+password = os.getenv('DATABASE_PASSWORD')
+
+conn_str = f'Driver={{ODBC Driver 18 for SQL Server}};Server={server},1433;Database={database};UID={user};PWD={password};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30'    
 
 @app.route('/orders', methods=['POST'])
 def create_order():
