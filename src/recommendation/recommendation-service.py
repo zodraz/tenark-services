@@ -7,9 +7,11 @@ app = Flask(__name__)
 # Connect to tenant-specific SQL Server database
 server = os.getenv('DATABASE_HOST')
 database = os.getenv('DATABASE_NAME')
-clientID = os.getenv('DATABASE_USER')
+user = os.getenv('DATABASE_USER')
+password = os.getenv('DATABASE_PASSWORD')
 
-conn_str = f'Driver={{ODBC Driver 18 for SQL Server}};Server=tcp:{server},1433;Database={database};UID={clientID};Authentication=ActiveDirectoryMsi;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30'
+conn_str = f'Driver={{ODBC Driver 18 for SQL Server}};Server={server},1433;Database={database};UID={user};PWD={password};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30'    
+
 
 @app.route('/recommendations', methods=['GET'])
 def get_recommendations():
